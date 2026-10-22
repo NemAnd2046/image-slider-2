@@ -1,18 +1,20 @@
 import { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { Photo } from "./components/Photo";
-import { Controls } from "./components/Controls";
+import { Counter } from "./components/Counter";
+import { PersList } from "./components/PersList";
 import { persons } from "./data.js";
 
 function App() {
-	const [imgIndex, setImgIndex] = useState(0);
+	const [pers, setPers] = useState(persons);
 
 	return (
-		<div className="max-w-5x1 mx-auto p-4 bg-teal-100 rounded-x1 shadow-lg h-screen">
-			<Header current={imgIndex + 1} total={persons.length} />
-			<Photo image={persons[imgIndex]} />
-			<Controls setImgIndex={setImgIndex} total={persons.length} />
+		<div className="bg-linear-to-br from-pink-700 to-violet-700">
+			<div className="main">
+				<Header />
+				<Counter count={pers.length} />
+				{pers.length != 0 && <PersList pers={pers} setPers={setPers} />}
+			</div>
 		</div>
 	);
 }

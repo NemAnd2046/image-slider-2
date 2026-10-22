@@ -1,12 +1,9 @@
 import React from "react";
 
-export const Header = ({ current, total }) => {
+export const Header = () => {
 	return (
-		<div className="bg-teal-100 text-teal-900 flow text-center">
-			<h1 className="text-lg font-bold">Fotógaléria</h1>
-			<p className="text-sm">
-				Kép {current}/{total}
-			</p>
+		<div className="text-center text-white">
+			<h1 className="text-lg font-bold text-white">Today birthdays</h1>
 		</div>
 	);
 };
